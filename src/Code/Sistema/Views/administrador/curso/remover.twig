@@ -1,0 +1,43 @@
+{% extends 'layout.twig' %}
+
+{% block conteudo %}
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Cursos do Sistema</h1>
+            <ol class="breadcrumb">
+                <li><a href="{{ path('index-admin') }}">Painel do Administrador</a></li>                        
+                <li><a href="#">Módulos</a></li> 
+                <li><a href="{{ path('list-curso') }}">Cursos</a></li>                     
+                <li class="active">Remover</li>
+            </ol>
+        </div>                
+        <!-- /.col-lg-12 -->
+    </div>
+    <div>
+        <div class="col-lg-12">                
+            <form action="{{ path('delete-curso', {'id': curso[0].id}) }}" method="post" class="form-horizontal">
+                {% if msg.ERROS is defined %}            
+                    <div class="alert alert-danger alert-dismissable row" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><ul>
+                    {%for erro in msg.ERROS %}
+                        <li>{{erro.Campo}}</li>
+                    {%endfor%}
+                    </ul></div>
+                {%endif%}
+                <div class="form-group">
+                    <label>Confirma a exclusão do curso abaixo?</label>
+                    <input type="text" name="nome" class="form-control" disabled value="{{ curso[0].nome }}">
+                </div>                        
+                <div class="row">
+                    <button type="submit" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i> Excluir</button>
+                    <a href="{{ path('list-curso') }}" class="btn btn-default"><i class="fa fa-undo fa-fw"></i> Voltar</a>
+                    <input type="hidden" name="id" value="{{ curso[0].id }}">
+                    <input type="hidden" id="_method" name="_method" value="DELETE" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>    
+
+{% endblock %}

@@ -1,0 +1,123 @@
+{% extends 'layout.twig' %}
+
+{% block conteudo %}
+    <br><br><br>
+    <div class="row">
+    <div class="col-lg-12">
+        <h2>Cursos da Instituição</h2>
+    </div>
+</div>
+
+<div class="row">    
+    <div class="col-lg-1">
+        <a href="{{ path('new-curso') }}" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Curso</a>
+    </div>
+    <div class="col-lg-3">Total de registros: {{totalRegistros}}</div>
+    <div id="Pesquisar">
+        <input type="text" class="form-control" name="txtnome" id="txtnome" placeholder="Nome do Curso...">
+        <button type="submit" class="btn btn-default" onclick="getDados();"><i class="glyphicon glyphicon-search"></i> Pesquisar</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        {% for message in app.session.getFlashBag.get('messageSuccess') %}
+            <div class="alert alert-success" role="alert">{{ message }}</div>
+        {% endfor %}
+        {% for message in app.session.getFlashBag.get('messageFail') %}
+            <div class="alert alert-success" role="alert">{{ message }}</div>
+        {% endfor %}        
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Created</th>                    
+                    <th>Updated</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <div id="Resultado"></div>
+                {% for curso in cursos %}
+                    <tr>
+                        <td>{{ curso.nome }}</td>
+                        <td>{{ curso.createdAt is empty ? "" : curso.createdAt|date('d/m/Y H:i:s') }}</td>
+                        <td>{{ curso.updatedAt is empty ? "" : curso.updatedAt|date('d/m/Y H:i:s') }}</td>
+                        <td>
+                            <a href="{{ path('edit-curso', {id: curso.id}) }}" class="btn btn-info btn-sm">Editar</a>
+                            <a href="{{ path('delete-curso', {id: curso.id}) }}" class="btn btn-danger btn-sm">Remover</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <ul class="pagination">
+            {{ paginacao |raw }}
+        </ul>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+    <script>/**
+  * Função para criar um objeto XMLHTTPRequest
+  */
+ function CriaRequest() {
+     try{
+         request = new XMLHttpRequest();        
+     }catch (IEAtual){
+         
+         try{
+             request = new ActiveXObject("Msxml2.XMLHTTP");       
+         }catch(IEAntigo){
+         
+             try{
+                 request = new ActiveXObject("Microsoft.XMLHTTP");          
+             }catch(falha){
+                 request = false;
+             }
+         }
+     }
+     
+     if (!request) 
+         alert("Seu Navegador não suporta Ajax!");
+     else
+         return request;
+ }
+ 
+ /**
+  * Função para enviar os dados
+  */
+ function getDados() { 
+     
+     // Declaração de Variáveis
+     var nome   = document.getElementById("txtnome").value;
+     var result = document.getElementById("Resultado");
+     var xmlreq = CriaRequest();
+     
+     // Exibi a imagem de progresso
+     result.innerHTML = '<img src="../../../../img/loading.gif"/>';
+     
+     // Iniciar uma requisição
+     xmlreq.open("GET", "/administrador/curso/pesquisar?search=" + nome, true);
+     
+     // Atribui uma função para ser executada sempre que houver uma mudança de ado
+     xmlreq.onreadystatechange = function(){
+         
+         // Verifica se foi concluído com sucesso e a conexão fechada (readyState=4)
+         if (xmlreq.readyState == 4) {
+             
+             // Verifica se o arquivo foi encontrado com sucesso
+             if (xmlreq.status == 200) {                
+                result.innerHTML = xmlreq.responseText;
+                 
+             }else{
+                 result.innerHTML = "Erro: " + xmlreq.statusText;
+             }
+         }
+     };
+     xmlreq.send(null);
+ } 
+    </script>
+{% endblock %}

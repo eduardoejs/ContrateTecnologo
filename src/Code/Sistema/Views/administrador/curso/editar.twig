@@ -1,0 +1,76 @@
+{% extends 'layout.twig' %}
+
+{% block conteudo %}
+    
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Cursos do Sistema</h1>
+            <ol class="breadcrumb">
+                <li><a href="{{ path('index-admin') }}">Painel do Administrador</a></li>                        
+                <li><a href="#">Módulos</a></li> 
+                <li><a href="{{ path('list-curso') }}">Cursos</a></li>                     
+                <li class="active">Alterar</li>
+            </ol>
+        </div>                
+        <!-- /.col-lg-12 -->
+    </div>
+        <div>
+        <div class="col-lg-12">                
+            <form action="{{ path('edit-curso', {'id': curso[0].id}) }}" method="post" class="form-horizontal">
+                <div class="form-group">
+                    <label>Nome do curso</label>
+                    <input type="text" name="nome" class="form-control" value="{{ curso[0].nome }}">
+                </div>                        
+                <div class="row">
+                    <button type="submit" class="btn btn-success"><i class="glyphicon glyphicon-edit"></i> Alterar</button>
+                    <a href="{{ path('list-curso') }}" class="btn btn-default"><i class="fa fa-undo fa-fw"></i> Voltar</a>
+                    <input type="hidden" name="id" value="{{ curso[0].id }}">
+                    <input type="hidden" id="_method" name="_method" value="PUT" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>    
+                
+                
+                
+                
+    <br><br><br>
+    <div class="row">
+    <div class="col-lg-12">
+        <h2>Alterar dados do Curso</h2>
+    </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row well">
+        <form action="{{ path('edit-curso', {'id': curso[0].id} ) }}" method="post">
+            {% if msg.ERROS is defined %}            
+                <div class="alert alert-danger alert-dismissable row" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><ul>
+                {%for erro in msg.ERROS %}
+                    <li>{{erro.Campo}}</li>
+                {%endfor%}
+                </ul></div>
+            {%endif%}
+            <div class="form-group col-md-12 has-feedback">
+                <label class="control-label" for="nome">Nome do Curso</label>
+                <input type="text" name="nome" id="nome" class="form-control" data-validation="required" data-validation-error-msg="* Campo obrigatório" value="{{curso[0].nome}}" >
+            </div>
+            <div class="col-md-12">
+            <input type="hidden" name="id" value="{{ curso[0].id }}">
+            <input type="hidden" id="_method" name="_method" value="PUT" />
+              <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-check"></i> Salvar</button>
+              <a class="btn btn-default" href="{{path('list-curso')}}" role="button"><i class="glyphicon glyphicon-minus-sign"></i> Cancelar</a>
+            </div>
+        </form>
+    </div>
+    
+</div>
+{%endblock%}
+
+{% block scripts %}
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.2.1/jquery.form-validator.min.js"></script>
+  <script> $.validate(); </script>
+{% endblock %}

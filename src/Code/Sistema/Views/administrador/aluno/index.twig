@@ -1,0 +1,120 @@
+{% extends "layout.twig" %}
+
+{% block links %}
+{% endblock %}
+
+{% block conteudo %}
+    <br><br><br>
+<div class="row">
+    <div class="col-lg-12">
+        <h2>Alunos</h2>
+    </div>
+</div>
+
+<div>
+  <ol class="breadcrumb">
+    <li><a href="{{ path('index-admin') }}">Painel do Administrador</a></li>
+    <li><a href="#">Módulos</a></li>
+    <li class="active">Alunos</li>
+  </ol>
+</div>
+
+<div class="row">
+    <div>
+        <form action="{{ path('import-aluno') }}" class="form-inline" role="form" method="post" enctype="multipart/form-data">
+            <div class="form-group">                
+                <label for="">Importação por .csv</label>
+                <input type="file" class="form-control" name="file_csv">
+            </div>
+            <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-import"></i> Importar</button>
+        </form>
+        {% if msg.ERROS is defined %}
+            <div class="alert alert-danger alert-dismissable row" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><ul>
+            {%for erro in msg.ERROS%}
+                <li>{{erro.Campo}}</li>
+            {%endfor%}
+            </ul></div>
+        {%endif%}
+    </div>
+</div>
+    
+<div class="row">
+    <div class="col-lg-7">
+        <a href="{{ path('new-aluno') }}" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Aluno</a>
+    </div>
+    <div class="col-lg-offset-9">
+        <form action="{{ path("search-aluno") }}" class="form-inline" role="form">
+            <div class="form-group">                
+                <label for="">Filtros</label>
+                <input type="text" class="form-control" name="search" placeholder="Nome do aluno..." {%if search is defined %} value="{{search}}" {% endif %}>
+            </div>
+            <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i> </button>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+    	<div>Total de <strong>{{totalRegistros}}</strong> registros encontrados. {%if search is defined %} {%if search is not empty %}Termo pesquisado: <b>{{search}}</b> {%endif%}{%endif%}</div>        
+        <div class="table-responsive">
+            {% for aluno in alunos %}
+                <div class="panel panel-info">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading"><strong>Aluno(a):</strong> {{ aluno.nome[:255]|upper }}{#(Slice)Limito a exibição em X caracteres do nome#}</div>
+                    <div class="panel-body">
+                        <div class="row col-md-12">
+                            <div id="foto" class="col-md-1">
+                                {% if aluno.foto is not null %} <img src="/uploads/fotos/{{ aluno.foto }}" /> {% else %} {% if aluno.sexo == 'M' %} <img src="/uploads/fotos/no-foto-m.jpg"/> {% else %} <img src="/uploads/fotos/no-foto-f.jpg"/> {% endif %}{% endif %}
+                            </div>
+                            <div id="informacao"class="col-md-11">
+                                <div class="row col-md-12">
+                                    <p class="col-md-3">RA: <b>{{aluno.ra}}</b></p>
+                                    <p class="col-md-3">CPF: <b>{{aluno.cpf}}</b></p>
+                                    <p class="col-md-3">Sexo: <b>{% if aluno.sexo == 'F' %} {{'Feminino'}} {%else%} {{'Masculino'}}{%endif%}</b></p>
+                                    <p class="col-md-3"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Nascimento: <b>{{ aluno.dataNasc|date('d/m/Y') }}</b></p>
+                                </div>
+                                <div class="row col-md-12">
+                                    <p class="col-md-3">Estado Civil: <b>{{aluno.estadoCivil}}</b></p>
+                                    <p class="col-md-3">Nacionalidade: <b>{{aluno.nacionalidade}}</b></p>
+                                    <p class="col-md-3">Email: <b>{{aluno.email}}</b></p>
+                                </div>
+                                <div class="row col-md-12">
+                                    <p class="col-md-3">Telefone: <b>{{aluno.fone1}}</b></p>
+                                    <p class="col-md-3">Telefone: <b>{{aluno.fone2}}</b></p>                                    
+                                </div>
+                                <div class="row col-md-12">
+                                    <div class="col-md-12">
+                                        <div class="col-md-10">Op</div>                                        
+                                        <div class="col-md-2">
+                                            <a href="{{ path('edit-aluno', {id: aluno.id}) }}" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> </a>
+                                            <a href="{{ path('delete-aluno', {id: aluno.id}) }}" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Table -->
+                    <table class="table">
+                        <tr>
+                            <td>Curso:<b>{{ aluno.curso.nome }}</b></td>
+                            <td><b>{{ aluno.termo }}º Termo</b></td>                        
+                            <td>Período: <b> {% if aluno.periodo == 'N' %} {{ 'NOTURNO' }} {% else %} {{'MANHÃ'}} {% endif %}</b></td>
+                            <td><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Ínicio{{ aluno.dataInicio }}</td>
+                            <td><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Conclusão{{ aluno.dataConclusao }}</td>                            
+                        </tr>                        
+                    </table>
+                </div>  
+            {% endfor %}        
+            <ul class="pagination">
+                {{ paginacao |raw }}
+            </ul>
+        </div>        
+    </div>
+</div>        
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

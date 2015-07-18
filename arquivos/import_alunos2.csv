@@ -1,0 +1,100 @@
+RA;Nome;CPF;Sexo;Data Nasc;Email;Curso;Termo;Periodo
+13001;Joao;1111;M;11/01/1980;j@mail.com;18;1;M
+13002;Maria;2222;F;10/10/1990;m@mail.com;18;2;M
+13003;Jose;3333;M;01/01/1995;jj@mail.com;22;3;N
+13004;Pedo;4444;M;02/12/1950;635@mail.com;22;4;N
+13005;Catarina;5555;F;01/01/1999;390@mail.com;18;5;M
+13006;Joao Catarina;5556;M;01/02/1995;627@mail.com;18;6;M
+13007;Maria Joao Catarina;5557;F;02/02/1995;443@mail.com;18;1;M
+13008;Jose Maria Joao Catarina;5558;M;03/02/1995;589@mail.com;18;1;M
+13009;Pedo Jose Maria Joao Catarina;5559;M;04/02/1995;97@mail.com;18;1;M
+13010;Catarina Pedo Jose Maria Joao Catarina;5560;F;05/02/1995;397@mail.com;22;1;M
+13011;Joao Catarina Catarina Pedo Jose Maria Joao Catarina;5561;M;06/02/1995;428@mail.com;22;1;M
+13012;Maria Joao Catarina Joao Catarina Catarina Pedo Jose Maria Joao Catarina;5562;F;07/02/1995;228@mail.com;22;1;M
+13013;Jose Maria Joao Catarina Maria Joao Catarina Joao Catarina Catarina Pedo Jose Maria Joao Catarina;5563;M;08/02/1995;656@mail.com;22;1;M
+13014;Pedo Jose Maria Joao Catarina Jose Maria Joao Catarina Maria Joao Catarina Joao Catarina Catarina Pedo Jose Maria Joao Catarina;5564;M;09/02/1995;505@mail.com;18;1;M
+13015;Ana;5565;F;10/02/1995;399@mail.com;22;1;M
+13016;Beatriz;5566;F;11/02/1995;140@mail.com;18;1;M
+13017;Juliana;5567;F;12/02/1995;80@mail.com;18;1;M
+13018;Ana Beatriz;5568;F;13/02/1995;264@mail.com;22;1;M
+13019;Beatriz Juliana;5569;F;14/02/1995;286@mail.com;18;1;M
+13020;Juliana Ana Beatriz;5570;F;15/02/1995;720@mail.com;22;1;M
+13021;Ana Beatriz Beatriz Juliana;5571;F;16/02/1995;303@mail.com;22;1;M
+13022;Beatriz Juliana Juliana Ana Beatriz;5572;F;17/02/1995;281@mail.com;22;1;M
+13023;Juliana Ana Beatriz Ana Beatriz Beatriz Juliana;5573;F;18/02/1995;689@mail.com;22;1;M
+13024;Ana Beatriz Beatriz Juliana Beatriz Juliana Juliana Ana Beatriz;5574;F;19/02/1995;533@mail.com;18;2;M
+13025;Beatriz Juliana Juliana Ana Beatriz Juliana Ana Beatriz Ana Beatriz Beatriz Juliana;5575;F;20/02/1995;447@mail.com;18;2;M
+13026;Juliana Ana Beatriz Ana Beatriz Beatriz Juliana Ana Beatriz Beatriz Juliana Beatriz Juliana Juliana Ana Beatriz;5576;F;21/02/1995;711@mail.com;18;2;M
+13027;Joaquim;5577;M;01/05/1990;485@mail.com;18;2;M
+13028;Pedro;5578;M;02/05/1990;939@mail.com;18;2;M
+13029;Vitor;5579;M;03/05/1990;38@mail.com;18;2;M
+13030;Joaquim Vitor;5580;M;04/05/1990;596@mail.com;22;2;M
+13031;Pedro Joaquim Vitor;5581;M;05/05/1990;477@mail.com;18;2;M
+13032;Vitor Pedro Joaquim Vitor;5582;M;06/05/1990;663@mail.com;22;2;M
+13033;Joaquim Vitor Vitor Pedro Joaquim Vitor;5583;M;07/05/1990;407@mail.com;22;2;M
+13034;Pedro Joaquim Vitor Joaquim Vitor Vitor Pedro Joaquim Vitor;5584;M;08/05/1990;879@mail.com;22;2;M
+13035;Vitor Pedro Joaquim Vitor Pedro Joaquim Vitor Joaquim Vitor Vitor Pedro Joaquim Vitor;5585;M;09/05/1990;722@mail.com;22;2;M
+13036;Joaquim Vitor Vitor Pedro Joaquim Vitor Vitor Pedro Joaquim Vitor Pedro Joaquim Vitor Joaquim Vitor Vitor Pedro Joaquim Vitor;5586;M;10/05/1990;702@mail.com;22;2;M
+13037;Joaquim;5587;M;11/05/1990;225@mail.com;18;2;M
+13038;Pedro;5588;M;12/05/1990;881@mail.com;18;2;M
+13039;Vitor;5589;M;13/05/1990;25@mail.com;22;2;M
+13040;Joaquim Vitor;5590;M;14/05/1990;120@mail.com;18;2;M
+13041;Alana;5591;F;15/05/1990;19@mail.com;22;2;M
+13042;Maria;5592;F;16/05/1990;386@mail.com;18;2;M
+13043;Vitoria;5593;F;17/05/1990;794@mail.com;22;2;M
+13044;Beatriz;5594;F;18/05/1990;590@mail.com;22;2;M
+13045;Rosana;5595;F;19/05/1990;822@mail.com;22;2;M
+13046;Mara;5596;F;20/05/1990;989@mail.com;22;2;M
+13047;Alana Mara;5597;F;21/05/1990;526@mail.com;18;2;M
+13048;Maria Alana Mara;5598;F;22/05/1990;616@mail.com;18;2;N
+13049;Vitoria Maria Alana Mara;5599;F;23/05/1990;632@mail.com;18;2;N
+13050;Beatriz Vitoria Maria Alana Mara;5600;F;24/05/1990;893@mail.com;22;2;N
+13051;Rosana Beatriz Vitoria Maria Alana Mara;5601;F;25/05/1990;127@mail.com;22;2;N
+13052;Mara Rosana Beatriz Vitoria Maria Alana Mara;5602;F;26/05/1990;569@mail.com;22;2;N
+13053;Alana Mara Mara Rosana Beatriz Vitoria Maria Alana Mara;5603;F;27/05/1990;610@mail.com;22;2;N
+13054;Maria Alana Mara Alana Mara Mara Rosana Beatriz Vitoria Maria Alana Mara;5604;F;28/05/1990;406@mail.com;22;2;N
+13055;Vitoria Maria Alana Mara Maria Alana Mara Alana Mara Mara Rosana Beatriz Vitoria Maria Alana Mara;5605;F;29/05/1990;518@mail.com;18;2;N
+13056;Beatriz Vitoria Maria Alana Mara Vitoria Maria Alana Mara Maria Alana Mara Alana Mara Mara Rosana Beatriz Vitoria Maria Alana Mara;5606;F;30/05/1990;863@mail.com;18;2;N
+13057;Rosana Beatriz Vitoria Maria Alana Mara Beatriz Vitoria Maria Alana Mara Vitoria Maria Alana Mara Maria Alana Mara Alana Mara Mara Rosana Beatriz Vitoria Maria Alana Mara;5607;F;31/05/1990;887@mail.com;18;2;N
+13058;Joelma;5608;F;01/06/1990;551@mail.com;18;2;N
+13059;Mirian;5609;F;02/06/1990;70@mail.com;22;2;N
+13060;Mirian;5610;F;03/06/1990;207@mail.com;22;3;N
+13061;Maria;5611;F;04/06/1990;101@mail.com;22;3;N
+13062;Ordalina;5612;F;05/06/1990;723@mail.com;18;3;N
+13063;Iris;5613;F;06/06/1990;926@mail.com;18;3;N
+13064;Marco;5614;M;07/06/1990;840@mail.com;18;3;N
+13065;Paulo;5615;M;08/06/1990;977@mail.com;22;3;N
+13066;Pedro;5616;M;09/06/1990;960@mail.com;22;3;N
+13067;Oliveira;5617;M;10/06/1990;789@mail.com;22;3;N
+13068;asdasd;5618;M;11/06/1990;759@mail.com;18;4;N
+13069;asdasd;5619;M;12/06/1990;943@mail.com;18;4;N
+13070;as;5620;M;13/06/1990;886@mail.com;22;4;N
+13071;das;5621;M;14/06/1990;537@mail.com;18;5;N
+13072;das;5622;M;15/06/1990;18@mail.com;22;5;N
+13073;das;5623;M;16/06/1990;952@mail.com;18;5;N
+13074;fdsf;5624;M;17/06/1990;978@mail.com;22;5;N
+13075;fdag;5625;M;18/06/1990;522@mail.com;18;5;N
+13076;sgfdh;5626;M;19/06/1990;831@mail.com;22;6;N
+13077;gf;5627;F;20/06/1990;455@mail.com;18;6;N
+13078;hhfd;5628;F;21/06/1990;900@mail.com;22;6;N
+13079;jhgd;5629;F;22/06/1990;334@mail.com;18;6;N
+13080;j;5630;F;23/06/1990;936@mail.com;22;6;N
+13081;hgj;5631;F;24/06/1990;227@mail.com;18;6;N
+13082;ghd;5632;F;25/06/1990;920@mail.com;22;6;N
+13083;kj;5633;F;26/06/1990;316@mail.com;18;6;N
+13084;jfgk;5634;F;27/06/1990;631@mail.com;22;6;N
+13085;jhk;5635;F;28/06/1990;945@mail.com;18;6;N
+13086;jhgd;5636;M;29/06/1990;459@mail.com;22;6;N
+13087;lhg;5637;M;30/06/1990;230@mail.com;18;6;N
+13088;kl;5638;M;01/07/1990;967@mail.com;22;6;N
+13089;kjhgl;5639;M;02/07/1990;85@mail.com;18;6;N
+13090;ghd;5640;M;03/07/1990;668@mail.com;22;6;N
+13091;jfgk;5641;M;04/07/1990;350@mail.com;18;6;N
+13092;jfs;5642;M;05/07/1990;719@mail.com;18;6;N
+13093;hgds;5643;M;06/07/1990;598@mail.com;22;6;N
+13094;fg;5644;M;07/07/1990;3@mail.com;18;6;N
+13095;sag;5645;M;08/07/1990;404@mail.com;18;6;N
+13096;das;5646;F;09/07/1990;254@mail.com;22;6;N
+13097;g;5647;F;10/07/1990;977@mail.com;22;6;N
+13098;asg;5648;F;11/07/1990;768@mail.com;22;6;N
+13099;sag;5649;F;12/07/1990;417@mail.com;22;6;N
